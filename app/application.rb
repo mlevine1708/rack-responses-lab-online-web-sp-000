@@ -1,7 +1,6 @@
-class Application 
+class Application
 
 
 
 
 end
-
