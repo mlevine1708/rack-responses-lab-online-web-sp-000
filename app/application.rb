@@ -11,6 +11,6 @@ class Application
       resp.write "Good Evening!"
     end
 
-    resp.fininsh
+    resp.finish
   end
 end
