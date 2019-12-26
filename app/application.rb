@@ -1,13 +1,16 @@
 class Application
 
   def call(env)
-    return [200, {'Content-Type' => 'text/html', last_response}]
+    resp = Rack::Response.new
+
+    if Time.now.hour.between?(0, 11)
+      resp.write "Good Morning!"
+    elsif Time.now.hour.between?(12, 17)
+      resp.write "Good Afternoon."
+    else
+      resp.write "Good Evening!"
+    end
+
+    resp.fininsh
   end
-
-  def last_response
-    (Time.now.to_i <12 ["Good Morning"] : ["Good Afternoon"])
-  end
-
-
-
 end
